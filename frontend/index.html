@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMSI Notes · Gestion de la scolarité</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Écran de connexion -->
+  <section id="ecran-connexion" class="connexion" hidden>
+    <form id="form-connexion" class="carte-connexion">
+      <div class="marque"><span class="logo">EN</span><div><b>EMSI Notes</b><small>Gestion de la scolarité</small></div></div>
+      <label>Identifiant<input name="login" autocomplete="username" required autofocus></label>
+      <label>Mot de passe<input name="password" type="password" autocomplete="current-password" required></label>
+      <p id="erreur-connexion" class="msg-erreur" hidden></p>
+      <button class="btn principal" type="submit">Se connecter</button>
+      <p class="aide">Application pédagogique · données fictives</p>
+    </form>
+  </section>
+
+  <!-- Application -->
+  <div id="ecran-app" class="app" hidden>
+    <header class="entete">
+      <div class="marque"><span class="logo">EN</span><div><b>EMSI Notes</b><small>Gestion de la scolarité</small></div></div>
+      <div class="utilisateur">
+        <span id="nom-utilisateur"></span><span id="role-utilisateur" class="badge"></span>
+        <button id="btn-deconnexion" class="btn discret">Déconnexion</button>
+      </div>
+    </header>
+    <nav id="menu" class="menu"></nav>
+    <main id="contenu" class="contenu"></main>
+    <footer class="pied">
+      <span>Servi par · serveur web : <b id="srv-web">—</b> · serveur API : <b id="srv-api">—</b> · base : <b id="srv-base">—</b></span>
+      <span>EMSI Notes v1.0</span>
+    </footer>
+  </div>
+
+  <!-- Fenêtre modale (formulaires) -->
+  <dialog id="modale"><form method="dialog" id="form-modale"></form></dialog>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
